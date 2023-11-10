@@ -1,0 +1,34 @@
+version: '3.7'
+services:
+
+  test1:
+    image: alpine:latest
+    command: nc -l -k 4441
+    ports:
+      - "4441:4441"
+    deploy:
+      placement:
+        constraints:
+          - node.labels.test1 == true
+    networks:
+      - test-network
+
+  test2:
+    image: alpine:latest
+    command: nc -l -k 4442
+    ports:
+      - "4442:4442"
+    deploy:
+      placement:
+        constraints:
+          - node.labels.test2 == true
+    networks:
+      - test-network
+
+networks:
+  test-network:
+    driver: overlay
+    attachable: true
+    driver_opts:
+      encrypted: "false"
+

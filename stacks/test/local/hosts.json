@@ -1,0 +1,16 @@
+{
+    "nodes": [
+        {
+            "username": "ubuntu",
+            "hostname": "192.168.122.38",
+            "public_ipv4": "192.168.122.38",
+            "roles": ["manager", "test1"]
+        },
+        {
+            "username": "ubuntu",
+            "hostname": "192.168.122.9",
+            "public_ipv4": "192.168.122.9",
+            "roles": ["worker", "test2"]
+        }
+    ]
+}
